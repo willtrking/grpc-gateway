@@ -163,6 +163,7 @@ func handleForwardResponseStreamError(marshaler Marshaler, w http.ResponseWriter
 			Message:    err.Error(),
 			HTTPStatus: http.StatusText(httpCode),
 		}}
+
 	buf, merr := marshaler.Marshal(resp)
 	if merr != nil {
 		grpclog.Printf("Failed to marshal an error: %v", merr)
