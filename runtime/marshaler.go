@@ -249,6 +249,7 @@ func (j *JSONPb) Marshal(v interface{}) ([]byte, error) {
 		}
 		return buf.Bytes(), nil
 	} else {
+		_ = v.(proto.Message)
 		return nil, errors.New("Interface is not proto.Message")
 	}
 
